@@ -1,0 +1,27 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.ethug.tscatemfdh.mixin",
+  "compatibilityLevel": "JAVA_25",
+  "mixins": [
+  ],
+  "client": [
+    "JoinMultiplayerScreenMixin",
+    "ServerSelectionListMixin",
+    "ServerStatusPingerMixin",
+    "CreateWorldScreenInvoker",
+    "JoinMultiplayerScreenAccessor",
+    "ManageServerScreenMixin",
+    "ChatComponentMixin",
+    "IntegratedServerMixin",
+    "MinecraftServerPermissionMixin",
+    "PlayerListOpMixin",
+    "PlayerListLoginMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

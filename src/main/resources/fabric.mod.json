@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "tscatemfdh",
+  "version": "${version}",
+  "name": "tscatemfdh",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/tscatemfdh/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.ethug.tscatemfdh.client.tscatemfdhClient"
+    ],
+    "main": [
+      "net.ethug.tscatemfdh.tscatemfdh"
+    ]
+  },
+  "mixins": [
+    "tscatemfdh.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
