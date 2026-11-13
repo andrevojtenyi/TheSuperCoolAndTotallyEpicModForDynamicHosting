@@ -1,6 +1,6 @@
 # Shared Worlds (tscatemfdh)
 
-> **Note:** this project was mostly vibecoded: the large majority of the code was written with an AI assistant from
+> **Note:** this project was mostly vibecoded: the large majority of the code was written with the help of an AI assistant from
 > plain-English requests, and has been tested only by playing it with a few people. Expect rough edges, read the code before you
 > trust it with a world you can't lose, and keep your own backups.
 
