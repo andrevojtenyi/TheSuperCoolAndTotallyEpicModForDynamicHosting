@@ -1,7 +1,7 @@
 # Shared Worlds (tscatemfdh)
 
-> **Note:** this project was mostly "vibe coded": the large majority of the code was written by an AI assistant (Claude Code) from
-> plain-English requests, and has been tested only by playing it with a few friends. Expect rough edges, read the code before you
+> **Note:** this project was mostly vibecoded: the large majority of the code was written with an AI assistant from
+> plain-English requests, and has been tested only by playing it with a few people. Expect rough edges, read the code before you
 > trust it with a world you can't lose, and keep your own backups.
 
 Play one persistent world with friends, stored encrypted on the owner's Google Drive. First player in becomes host; the world runs only while someone is on.
