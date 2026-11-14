@@ -360,7 +360,7 @@ public final class SharedSession {
         }
     }
 
-    private static final String EXPIRED = "Google sign-in expired. The world's owner must use \"Refresh Google sign-in\" in Shared Worlds, then send everyone the new invite code.";
+    static final String EXPIRED = "Google sign-in expired. The world's owner must use \"Refresh Google sign-in\" (in the world's Edit screen), then send everyone the new invite code.";
 
     private static String friendly(Throwable e) {
         return DriveClient.isAuthExpired(e) ? EXPIRED : String.valueOf(e.getMessage());
@@ -1017,7 +1017,7 @@ public final class SharedSession {
                         }
                     } catch (Exception ignored) {
                     }
-                    status = "Added, but its Google sign-in has expired. If the world is in your Drive, use Refresh Google sign-in; otherwise its owner must.";
+                    status = "Added, but its Google sign-in has expired. If the world is in your Drive, use Refresh Google sign-in in its Edit screen; otherwise its owner must.";
                     return;
                 }
                 status = "Could not add: " + friendly(ex);

@@ -14,7 +14,7 @@ import net.minecraft.network.chat.Component;
 public class SharedConnectScreen extends Screen {
     private final Screen back;
     private final String worldName;
-    private Button action;
+    private Button action, refresh;
 
     public SharedConnectScreen(Screen back, String worldName) {
         super(Component.literal("Connecting"));
@@ -26,11 +26,15 @@ public class SharedConnectScreen extends Screen {
     protected void init() {
         action = addRenderableWidget(Button.builder(CommonComponents.GUI_CANCEL, b -> leave())
                 .bounds(width / 2 - 100, height / 4 + 120 + 12, 200, 20).build());
+        refresh = addRenderableWidget(Button.builder(Component.literal("Refresh Google Sign-in"),
+                        b -> SharedSession.INSTANCE.refreshGoogleSignIn())
+                .bounds(width / 2 - 100, height / 4 + 120 + 12 + 24, 200, 20).build());
         refreshButton();
     }
 
     private void refreshButton() {
         if (action == null) return;
+        if (refresh != null) refresh.visible = SharedSession.EXPIRED.equals(SharedSession.INSTANCE.status); // only when that's the problem
         SharedSession s = SharedSession.INSTANCE;
         action.setMessage(s.isActive() ? CommonComponents.GUI_CANCEL : CommonComponents.GUI_BACK);
         action.active = !(s.isActive() && s.isHosting()); // the world is already opening; too late to back out here

@@ -116,6 +116,12 @@ public abstract class ManageServerScreenMixin extends Screen {
             copySp.setRectangle(w, rowH, x, y);
             addRenderableWidget(copySp);
             y += pitch;
+            addRenderableWidget(Button.builder(Component.literal("Refresh Google sign-in"),
+                            b -> SharedSession.INSTANCE.refreshGoogleSignIn())
+                    .tooltip(Tooltip.create(Component.literal("Use this when saving or joining says \"Google sign-in expired\". "
+                            + "It changes the invite code, so send the new one to your friends.")))
+                    .bounds(x, y, w, rowH).build());
+            y += pitch;
         } else {
             copySp.setRectangle(w, rowH, x, y);
             addRenderableWidget(copySp);

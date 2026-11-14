@@ -15,7 +15,7 @@ import net.minecraft.client.gui.screens.multiplayer.JoinMultiplayerScreen;
 import net.minecraft.network.chat.CommonComponents;
 import net.minecraft.network.chat.Component;
 
-/** Add a friend's invite, share one of your worlds, or refresh Google sign-in. Laid out like the vanilla menus. */
+/** Add a friend's invite or share one of your worlds. Laid out like the vanilla menus. */
 public class SharedWorldsScreen extends Screen {
     private final Screen parent;
     private final HeaderAndFooterLayout layout = new HeaderAndFooterLayout(this);
@@ -42,11 +42,6 @@ public class SharedWorldsScreen extends Screen {
         body.addChild(SpacerElement.height(8));
         body.addChild(Button.builder(Component.literal("Share a World..."),
                 b -> minecraft.setScreen(new ShareFormScreen(parent))).width(w).build());
-        body.addChild(Button.builder(Component.literal("Refresh Google Sign-in"),
-                        b -> SharedSession.INSTANCE.refreshGoogleSignIn())
-                .tooltip(Tooltip.create(Component.literal(
-                        "Use this when a world says \"Google sign-in expired\". Sign in with the Google account whose Drive holds the world.")))
-                .width(w).build());
         layout.addToFooter(Button.builder(CommonComponents.GUI_DONE, b -> onClose()).width(w).build());
         layout.visitWidgets(this::addRenderableWidget);
         repositionElements();
